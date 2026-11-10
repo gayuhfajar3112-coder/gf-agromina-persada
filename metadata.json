@@ -1,0 +1,8 @@
+{
+  "name": "Remix PT GF Agromina Persada - Supplier Ikan Segar \u0026 Beku Trenggalek",
+  "description": "Website resmi PT GF Agromina Persada pimpinan Gayuh M. Fajar (Founder | Entrepreneur | Seafood \u0026 Agribusiness, Mahasiswa Fakultas Peternakan FAPET Universitas Brawijaya). Supplier ikan segar \u0026 beku (Tongkol Lisong, Tembang, Kekek Jawa, Layang Benggol, Cakalang, Lemuru, Tongkol Komo, Madidihang, Layang Anggur, Layur), kalkulator pasokan hitung total keseluruhan, dan inisiasi Divisi Peternakan Sapi Terpadu.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

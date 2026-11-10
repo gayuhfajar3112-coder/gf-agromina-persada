@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PT GF AGROMINA PERSADA | Official Company Profile & Business Hub</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ocean: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            900: '#0f172a',
+                        },
+                        teal: {
+                            500: '#14b8a6',
+                            600: '#0d9488',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased">
+
+    <!-- Toast Notification Box -->
+    <div id="toast" class="fixed bottom-5 right-5 z-50 transform translate-y-24 opacity-0 transition-all duration-300 bg-slate-900 text-white px-6 py-3 rounded-xl shadow-2xl flex items-center space-x-3 border border-slate-700">
+        <i id="toast-icon" class="fa-solid fa-circle-check text-teal-400 text-xl"></i>
+        <span id="toast-msg" class="text-sm font-medium">Notification message</span>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="sticky top-0 z-40 bg-slate-900/95 backdrop-blur-md border-b border-slate-800 text-white transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo & Brand -->
+            <a href="#" class="flex items-center space-x-3 group">
+                <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-ocean-600 to-teal-500 flex items-center justify-center shadow-lg shadow-ocean-600/30 group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-water text-white text-xl"></i>
+                </div>
+                <div>
+                    <span class="text-lg font-bold tracking-wider block text-white leading-tight">PT GF AGROMINA PERSADA</span>
+                    <span class="text-xs text-ocean-400 font-medium tracking-widest uppercase" data-i18n="nav_sub">Agribusiness & Fisheries</span>
+                </div>
+            </a>
+
+            <!-- Desktop Menu Links -->
+            <div class="hidden lg:flex items-center space-x-8 text-sm font-medium text-slate-300">
+                <a href="#about" class="hover:text-ocean-400 transition-colors" data-i18n="nav_about">Tentang Kami</a>
+                <a href="#founder" class="hover:text-ocean-400 transition-colors" data-i18n="nav_founder">Pimpinan</a>
+                <a href="#business" class="hover:text-ocean-400 transition-colors" data-i18n="nav_business">Kegiatan Usaha</a>
+                <a href="#workflow" class="hover:text-ocean-400 transition-colors" data-i18n="nav_workflow">Proses & Mutu</a>
+                <a href="#products" class="hover:text-ocean-400 transition-colors" data-i18n="nav_products">Produk</a>
+                <a href="#partnership" class="hover:text-ocean-400 transition-colors" data-i18n="nav_partnership">Kemitraan</a>
+                <a href="#contact" class="hover:text-ocean-400 transition-colors" data-i18n="nav_contact">Kontak</a>
+            </div>
+
+            <!-- Language Toggle & Mobile Menu Button -->
+            <div class="flex items-center space-x-4">
+                <button onclick="toggleLanguage()" class="flex items-center space-x-2 bg-slate-800 hover:bg-slate-700 px-3.5 py-2 rounded-lg text-xs font-semibold border border-slate-700 transition-all text-slate-200 cursor-pointer">
+                    <i class="fa-solid fa-globe text-ocean-400"></i>
+                    <span id="lang-label">ID / EN</span>
+                </button>
+                <button onclick="toggleMobileMenu()" class="lg:hidden text-slate-300 hover:text-white p-2 focus:outline-none cursor-pointer">
+                    <i id="mobile-menu-icon" class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-slate-900 border-b border-slate-800 px-6 py-5 space-y-4 text-sm font-medium text-slate-300">
+            <a href="#about" onclick="toggleMobileMenu()" class="block hover:text-ocean-400" data-i18n="nav_about">Tentang Kami</a>
+            <a href="#founder" onclick="toggleMobileMenu()" class="block hover:text-ocean-400" data-i18n="nav_founder">Pimpinan</a>
+            <a href="#business" onclick="toggleMobileMenu()" class="block hover:text-ocean-400" data-i18n="nav_business">Kegiatan Usaha</a>
+            <a href="#workflow" onclick="toggleMobileMenu()" class="block hover:text-ocean-400" data-i18n="nav_workflow">Proses & Mutu</a>
+            <a href="#products" onclick="toggleMobileMenu()" class="block hover:text-ocean-400" data-i18n="nav_products">Produk</a>
+            <a href="#partnership" onclick="toggleMobileMenu()" class="block hover:text-ocean-400" data-i18n="nav_partnership">Kemitraan</a>
+            <a href="#contact" onclick="toggleMobileMenu()" class="block hover:text-ocean-400" data-i18n="nav_contact">Kontak</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative bg-slate-900 text-white overflow-hidden py-24 lg:py-32">
+        <div class="absolute inset-0 opacity-25 bg-[radial-gradient(#0ea5e9_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="absolute -top-40 -right-40 w-96 h-96 bg-ocean-600/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-40 -left-40 w-96 h-96 bg-teal-500/20 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div class="inline-flex items-center space-x-2 bg-slate-800/80 border border-slate-700 px-4 py-2 rounded-full mb-8 text-xs font-semibold text-ocean-400 tracking-wider uppercase">
+                <i class="fa-solid fa-location-dot"></i>
+                <span data-i18n="hero_badge">Trenggalek, Jawa Timur, Indonesia</span>
+            </div>
+            
+            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight max-w-5xl mx-auto leading-tight" data-i18n="hero_title">
+                PT GF AGROMINA PERSADA
+            </h1>
+            
+            <p class="mt-6 text-xl sm:text-2xl font-light text-ocean-300 max-w-3xl mx-auto" data-i18n="hero_subtitle">
+                Mitra Terpercaya Perdagangan Hasil Perikanan, Supplier Ikan Segar & Beku Profesional
+            </p>
+
+            <p class="mt-4 text-base sm:text-lg text-slate-400 max-w-2xl mx-auto" data-i18n="hero_desc">
+                Berpusat di Watulimo dan kawasan pesisir Prigi, menghubungkan hasil tangkapan laut berkualitas tinggi dengan nelayan lokal menuju jaringan mitra nasional.
+            </p>
+
+            <div class="mt-10 flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="https://wa.me/6282336507282" target="_blank" class="w-full sm:w-auto bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-semibold px-8 py-4 rounded-xl shadow-lg shadow-emerald-600/30 transition-all flex items-center justify-center space-x-3">
+                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                    <span data-i18n="hero_btn_wa">WhatsApp (+6282336507282)</span>
+                </a>
+                <a href="#products" class="w-full sm:w-auto bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold px-8 py-4 rounded-xl border border-slate-700 transition-all flex items-center justify-center space-x-3">
+                    <span data-i18n="hero_btn_products">Lihat Produk & Komoditas</span>
+                    <i class="fa-solid fa-fish"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Google Maps Business Profile Card Banner -->
+    <section class="bg-white border-b border-slate-200 shadow-sm py-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center space-x-4">
+                <div class="w-14 h-14 bg-ocean-50 text-ocean-600 rounded-2xl flex items-center justify-center text-2xl border border-ocean-100 shadow-inner flex-shrink-0">
+                    <i class="fa-solid fa-store"></i>
+                </div>
+                <div>
+                    <h2 class="text-lg font-bold text-slate-900">PT GF AGROMINA PERSADA</h2>
+                    <p class="text-sm text-slate-500 flex items-center space-x-2 mt-0.5">
+                        <span class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                        <span data-i18n="map_status">Aktif • Supplier Perikanan & Agribisnis</span>
+                    </p>
+                </div>
+            </div>
+            <div class="flex flex-wrap items-center gap-3 text-sm text-slate-600">
+                <div class="flex items-center space-x-2 bg-slate-100 px-4 py-2 rounded-xl">
+                    <i class="fa-solid fa-map-pin text-ocean-600"></i>
+                    <span class="font-medium text-xs sm:text-sm">Tasikmadu, Watulimo, Trenggalek</span>
+                </div>
+                <a href="https://wa.me/6282336507282" target="_blank" class="flex items-center space-x-2 bg-emerald-50 hover:bg-emerald-100 text-emerald-700 border border-emerald-200 px-4 py-2 rounded-xl font-medium transition-colors">
+                    <i class="fa-brands fa-whatsapp text-emerald-600"></i>
+                    <span>+6282336507282</span>
+                </a>
+                <a href="#contact" class="bg-ocean-600 hover:bg-ocean-700 text-white font-medium px-5 py-2 rounded-xl transition-colors shadow-sm" data-i18n="map_dir_btn">
+                    Kirim Pesan
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-20 lg:py-28 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-6 space-y-6">
+                    <div class="inline-flex items-center space-x-2 text-ocean-600 font-semibold text-sm uppercase tracking-wider">
+                        <i class="fa-solid fa-building"></i>
+                        <span data-i18n="about_tag">Tentang Perusahaan</span>
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight" data-i18n="about_title">
+                        Membangun Keunggulan dalam Agribisnis & Perikanan Nasional
+                    </h2>
+                    <p class="text-slate-600 leading-relaxed text-base sm:text-lg" data-i18n="about_desc1">
+                        GF AGROMINA PERSADA yang dipimpin oleh Gayuh M Fajar sebagai Pengusaha Pemasok Ikan Segar merupakan pusat penyedia hasil tangkapan laut berkualitas tinggi di Watulimo, Trenggalek. Kami melayani pasokan ikan segar untuk restoran, hotel, pasar grosir, serta pabrik pengolahan makanan dengan komitmen standar mutu dan rantai dingin (cold chain) terbaik.
+                    </p>
+                    <p class="text-slate-600 leading-relaxed text-base" data-i18n="about_desc2">
+                        Perusahaan mengembangkan jaringan kerja sama yang luas dan berkelanjutan dengan nelayan, pemilik kapal, pengepul, pemasok, pedagang besar, distributor, serta pelaku industri pengolahan hasil laut.
+                    </p>
+                    
+                    <!-- Vision & Mission -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                            <div class="w-10 h-10 rounded-xl bg-ocean-50 text-ocean-600 flex items-center justify-center mb-4">
+                                <i class="fa-solid fa-eye text-lg"></i>
+                            </div>
+                            <h3 class="font-bold text-slate-900 mb-2" data-i18n="vision_title">Visi Perusahaan</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed" data-i18n="vision_desc">
+                                Menjadi perusahaan agribisnis dan perikanan yang terpercaya, profesional, serta memiliki jaringan perdagangan dan distribusi hasil perikanan yang luas di Indonesia.
+                            </p>
+                        </div>
+                        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                            <div class="w-10 h-10 rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center mb-4">
+                                <i class="fa-solid fa-bullseye text-lg"></i>
+                            </div>
+                            <h3 class="font-bold text-slate-900 mb-2" data-i18n="mission_title">Misi Utama</h3>
+                            <ul class="text-sm text-slate-600 space-y-2">
+                                <li class="flex items-start space-x-2">
+                                    <i class="fa-solid fa-check text-teal-500 mt-1"></i>
+                                    <span data-i18n="mission_1">Menyediakan komoditas perikanan berkualitas.</span>
+                                </li>
+                                <li class="flex items-start space-x-2">
+                                    <i class="fa-solid fa-check text-teal-500 mt-1"></i>
+                                    <span data-i18n="mission_2">Membangun hubungan bisnis jangka panjang.</span>
+                                </li>
+                                <li class="flex items-start space-x-2">
+                                    <i class="fa-solid fa-check text-teal-500 mt-1"></i>
+                                    <span data-i18n="mission_3">Mengutamakan kualitas produk & pelayanan.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Operations vs Future Development Card -->
+                <div class="lg:col-span-6">
+                    <div class="bg-gradient-to-br from-slate-900 to-slate-800 text-white p-8 sm:p-10 rounded-3xl shadow-2xl border border-slate-700 relative overflow-hidden">
+                        <div class="absolute -right-16 -bottom-16 w-64 h-64 bg-ocean-500/10 rounded-full blur-2xl"></div>
+                        <h3 class="text-2xl font-bold mb-6 flex items-center space-x-3">
+                            <i class="fa-solid fa-compass text-ocean-400"></i>
+                            <span data-i18n="status_box_title">Status Operasional & Pengembangan</span>
+                        </h3>
+                        
+                        <div class="space-y-6">
+                            <div class="bg-slate-800/90 border border-slate-700 p-5 rounded-2xl">
+                                <div class="flex items-center space-x-3 text-emerald-400 font-semibold mb-2">
+                                    <i class="fa-solid fa-circle-check"></i>
+                                    <span data-i18n="current_ops_title">Kegiatan Usaha Berjalan</span>
+                                </div>
+                                <p class="text-sm text-slate-300 leading-relaxed" data-i18n="current_ops_desc">
+                                    Perdagangan besar hasil perikanan, pengadaan ikan segar & beku, pengadaan hasil tangkapan laut dari kawasan pesisir Prigi & Watulimo, serta distribusi langsung kepada mitra dan pelanggan komersial.
+                                </p>
+                            </div>
+
+                            <div class="bg-slate-800/90 border border-slate-700 p-5 rounded-2xl">
+                                <div class="flex items-center space-x-3 text-ocean-400 font-semibold mb-2">
+                                    <i class="fa-solid fa-arrow-trend-up"></i>
+                                    <span data-i18n="future_ops_title">Rencana Pengembangan Perusahaan</span>
+                                </div>
+                                <p class="text-sm text-slate-300 leading-relaxed" data-i18n="future_ops_desc">
+                                    Perluasan kapasitas cold storage modern, pengembangan lini pengolahan & pengemasan hasil laut berstandar tinggi, serta ekspansi jaringan distribusi hasil perikanan dan peternakan ke tingkat nasional.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founder & Leadership Profile Section -->
+    <section id="founder" class="py-20 lg:py-28 bg-white border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <div class="inline-flex items-center space-x-2 text-ocean-600 font-semibold text-sm uppercase tracking-wider mb-3">
+                    <i class="fa-solid fa-user-tie"></i>
+                    <span data-i18n="founder_tag">Kepemimpinan Perusahaan</span>
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight" data-i18n="founder_heading">
+                    Founder & Pimpinan
+                </h2>
+                <p class="mt-4 text-slate-600 text-lg" data-i18n="founder_sub">
+                    Pengalaman mendalam dan dedikasi tinggi di sektor agribisnis dan perdagangan perikanan.
+                </p>
+            </div>
+
+            <div class="max-w-4xl mx-auto bg-slate-50 border border-slate-200 rounded-3xl p-8 sm:p-12 shadow-sm flex flex-col md:flex-row items-center gap-10">
+                <div class="w-48 h-48 sm:w-56 sm:h-56 rounded-3xl bg-gradient-to-tr from-ocean-600 to-teal-500 flex-shrink-0 flex items-center justify-center text-white shadow-xl relative overflow-hidden">
+                    <div class="absolute inset-0 bg-black/10"></div>
+                    <i class="fa-solid fa-user-shield text-7xl relative z-10"></i>
+                </div>
+                <div class="space-y-4 text-center md:text-left">
+                    <span class="inline-block bg-ocean-100 text-ocean-700 text-xs font-bold px-3.5 py-1.5 rounded-full uppercase tracking-wider" data-i18n="founder_role">
+                        Founder & Pimpinan Perusahaan
+                    </span>
+                    <h3 class="text-3xl font-bold text-slate-900">GAYUH M FAJAR</h3>
+                    <p class="text-lg font-semibold text-ocean-600" data-i18n="founder_title_desc">
+                        Pengusaha Pemasok Ikan Segar & Praktisi Perikanan Andal
+                    </p>
+                    <p class="text-slate-600 leading-relaxed text-base" data-i18n="founder_bio">
+                        Berbekal pengalaman langsung di sentra perikanan pesisir selatan Jawa Timur, Gayuh M Fajar memimpin PT GF Agromina Persada dengan komitmen tinggi terhadap kualitas kesegaran ikan, transparansi kemitraan, serta keandalan rantai pasok dari nelayan hingga ke tangan pelanggan institusional dan grosir.
+                    </p>
+                    <div class="pt-2 flex flex-wrap justify-center md:justify-start gap-3">
+                        <span class="inline-flex items-center space-x-2 bg-white px-4 py-2 rounded-xl text-sm font-medium text-slate-700 border border-slate-200">
+                            <i class="fa-solid fa-map-location-dot text-ocean-600"></i>
+                            <span>Watulimo & Prigi Base</span>
+                        </span>
+                        <span class="inline-flex items-center space-x-2 bg-white px-4 py-2 rounded-xl text-sm font-medium text-slate-700 border border-slate-200">
+                            <i class="fa-solid fa-handshake text-teal-600"></i>
+                            <span data-i18n="founder_badge_net">Jaringan Nelayan & Supplier Luas</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Categories Section -->
+    <section id="business" class="py-20 lg:py-28 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <div class="inline-flex items-center space-x-2 text-ocean-600 font-semibold text-sm uppercase tracking-wider mb-3">
+                    <i class="fa-solid fa-briefcase"></i>
+                    <span data-i18n="biz_tag">Ruang Lingkup Usaha</span>
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight" data-i18n="biz_heading">
+                    9 Kategori Kegiatan Usaha Utama
+                </h2>
+                <p class="mt-4 text-slate-600 text-lg" data-i18n="biz_sub">
+                    Menyelenggarakan operasional komprehensif dari hulu hingga hilir perikanan dan agribisnis.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 1 -->
+                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition-all group">
+                    <div class="w-12 h-12 rounded-2xl bg-ocean-50 text-ocean-600 flex items-center justify-center text-xl mb-6 group-hover:bg-ocean-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-scale-balanced"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2" data-i18n="cat_1_title">1. Perdagangan Besar Hasil Perikanan</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed" data-i18n="cat_1_desc">
+                        Aktivitas perdagangan skala besar komoditas hasil laut untuk memenuhi kebutuhan pasar grosir dan industri.
+                    </p>
+                </div>
+                <!-- 2 -->
+                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition-all group">
+                    <div class="w-12 h-12 rounded-2xl bg-teal-50 text-teal-600 flex items-center justify-center text-xl mb-6 group-hover:bg-teal-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-fish-fins"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2" data-i18n="cat_2_title">2. Supplier Ikan Segar</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed" data-i18n="cat_2_desc">
+                        Penyediaan dan pasokan harian ikan segar langsung dari tangkapan nelayan pesisir dengan standar mutu tinggi.
+                    </p>
+                </div>
+                <!-- 3 -->
+                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition-all group">
+                    <div class="w-12 h-12 rounded-2xl bg-ocean-50 text-ocean-600 flex items-center justify-center text-xl mb-6 group-hover:bg-ocean-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-snowflake"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2" data-i18n="cat_3_title">3. Supplier Ikan Beku</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed" data-i18n="cat_3_desc">
+                        Penyediaan ikan beku berkualitas terjaga untuk pasokan berkelanjutan lintas wilayah dan industri.
+                    </p>
+                </div>
+                <!-- 4 -->
+                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition-all group">
+                    <div class="w-12 h-12 rounded-2xl bg-teal-50 text-teal-600 flex items-center justify-center text-xl mb-6 group-hover:bg-teal-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-ship"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2" data-i18n="cat_4_title">4. Pengadaan Hasil Tangkapan Laut</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed" data-i18n="cat_4_desc">
+                        Sistem pengadaan terpadu langsung dari kapal nelayan dan Tempat Pelelangan Ikan (TPI) Prigi.
+                    </p>
+                </div>
+                <!-- 5 -->
+                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition-all group">
+                    <div class="w-12 h-12 rounded-2xl bg-ocean-50 text-ocean-600 flex items-center justify-center text-xl mb-6 group-hover:bg-ocean-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-list-check"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2" data-i18n="cat_5_title">5. Penyortiran & Penanganan Ikan</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed" data-i18n="cat_5_desc">
+                        Proses seleksi ketat berdasarkan ukuran, jenis, dan tingkat kesegaran sesuai spesifikasi pembeli.
+                    </p>
+                </div>
+                <!-- 6 -->
+                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition-all group">
+                    <div class="w-12 h-12 rounded-2xl bg-teal-50 text-teal-600 flex items-center justify-center text-xl mb-6 group-hover:bg-teal-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-warehouse"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2" data-i18n="cat_6_title">6. Penyimpanan Cold Storage</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed" data-i18n="cat_6_desc">
+                        Fasilitas penyimpanan suhu rendah guna menjaga kualitas dan kesegaran produk dalam jangka panjang.
+                    </p>
+                </div>
+                <!-- 7 -->
+                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition-all group">
+                    <div class="w-12 h-12 rounded-2xl bg-ocean-50 text-ocean-600 flex items-center justify-center text-xl mb-6 group-hover:bg-ocean-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-box-open"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2" data-i18n="cat_7_title">7. Pengolahan & Pengemasan Hasil Laut</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed" data-i18n="cat_7_desc">
+                        Pengemasan higienis dan penyiapan produk olahan hasil laut yang siap didistribusikan secara aman.
+                    </p>
+                </div>
+                <!-- 8 -->
+                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition-all group">
+                    <div class="w-12 h-12 rounded-2xl bg-teal-50 text-teal-600 flex items-center justify-center text-xl mb-6 group-hover:bg-teal-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-truck-fast"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2" data-i18n="cat_8_title">8. Distribusi Antardaerah</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed" data-i18n="cat_8_desc">
+                        Pengiriman logistik hasil perikanan secara tepat waktu ke berbagai wilayah dan mitra distribusi.
+                    </p>
+                </div>
+                <!-- 9 -->
+                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition-all group">
+                    <div class="w-12 h-12 rounded-2xl bg-ocean-50 text-ocean-600 flex items-center justify-center text-xl mb-6 group-hover:bg-ocean-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-cow"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2" data-i18n="cat_9_title">9. Perdagangan & Peternakan</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed" data-i18n="cat_9_desc">
+                        Pengembangan lini agribisnis dan perdagangan komoditas peternakan untuk memperkuat portofolio perusahaan.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Workflow & Cold Chain Section -->
+    <section id="workflow" class="py-20 lg:py-28 bg-white border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <div class="inline-flex items-center space-x-2 text-ocean-600 font-semibold text-sm uppercase tracking-wider mb-3">
+                    <i class="fa-solid fa-gears"></i>
+                    <span data-i18n="wf_tag">Standar Operasional Profesional</span>
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight" data-i18n="wf_heading">
+                    Alur Kerja & Rantai Dingin (Cold Chain) Mutu Ikan
+                </h2>
+                <p class="mt-4 text-slate-600 text-lg" data-i18n="wf_sub">
+                    Proses sistematis yang menjamin kesegaran dan kualitas terbaik dari nelayan hingga mitra bisnis.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Step 1 -->
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200 relative">
+                    <div class="absolute -top-4 -left-4 w-10 h-10 rounded-xl bg-ocean-600 text-white font-bold flex items-center justify-center shadow-md">1</div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3 mt-2" data-i18n="wf_1_title">Pengadaan (Procurement)</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed" data-i18n="wf_1_desc">
+                        Kerja sama langsung dengan nelayan lokal di Watulimo dan Prigi untuk mendapatkan hasil tangkapan laut segar harian yang memenuhi standar seleksi mutu perusahaan.
+                    </p>
+                </div>
+                <!-- Step 2 -->
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200 relative">
+                    <div class="absolute -top-4 -left-4 w-10 h-10 rounded-xl bg-ocean-600 text-white font-bold flex items-center justify-center shadow-md">2</div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3 mt-2" data-i18n="wf_2_title">Penanganan & Cold Chain</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed" data-i18n="wf_2_desc">
+                        Pemberlakuan standar penanganan higienis cepat guna menjaga suhu dingin konstan dan mengeliminasi risiko penurunan kualitas ikan sejak pendaratan.
+                    </p>
+                </div>
+                <!-- Step 3 -->
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200 relative">
+                    <div class="absolute -top-4 -left-4 w-10 h-10 rounded-xl bg-ocean-600 text-white font-bold flex items-center justify-center shadow-md">3</div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3 mt-2" data-i18n="wf_3_title">Penyortiran (Sorting)</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed" data-i18n="wf_3_desc">
+                        Pemeriksaan teliti berdasarkan kategori spesies, ukuran berat, dan tingkat kesegaran untuk memastikan kesesuaian pesanan pelanggan grosir.
+                    </p>
+                </div>
+                <!-- Step 4 -->
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200 relative">
+                    <div class="absolute -top-4 -left-4 w-10 h-10 rounded-xl bg-teal-600 text-white font-bold flex items-center justify-center shadow-md">4</div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3 mt-2" data-i18n="wf_4_title">Penyimpanan (Storage)</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed" data-i18n="wf_4_desc">
+                        Penggunaan fasilitas cold storage dan ruang pendingin terkontrol untuk mempertahankan kesegaran produk dalam jangka panjang.
+                    </p>
+                </div>
+                <!-- Step 5 -->
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200 relative">
+                    <div class="absolute -top-4 -left-4 w-10 h-10 rounded-xl bg-teal-600 text-white font-bold flex items-center justify-center shadow-md">5</div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3 mt-2" data-i18n="wf_5_title">Pengemasan (Packaging)</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed" data-i18n="wf_5_desc">
+                        Pengemasan yang higienis, aman, dan dirancang khusus untuk mempertahankan temperatur optimal selama perjalanan distribusi.
+                    </p>
+                </div>
+                <!-- Step 6 -->
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200 relative">
+                    <div class="absolute -top-4 -left-4 w-10 h-10 rounded-xl bg-teal-600 text-white font-bold flex items-center justify-center shadow-md">6</div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3 mt-2" data-i18n="wf_6_title">Distribusi (Distribution)</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed" data-i18n="wf_6_desc">
+                        Sistem pengiriman terjadwal dan efisien untuk menyuplai pedagang besar, distributor, restoran, hotel, dan industri pengolahan.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products & Commodities Section -->
+    <section id="products" class="py-20 lg:py-28 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <div class="inline-flex items-center space-x-2 text-ocean-600 font-semibold text-sm uppercase tracking-wider mb-3">
+                    <i class="fa-solid fa-fish"></i>
+                    <span data-i18n="prod_tag">Katalog Komoditas</span>
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight" data-i18n="prod_heading">
+                    Produk & Komoditas Unggulan
+                </h2>
+                <p class="mt-4 text-slate-600 text-lg" data-i18n="prod_sub">
+                    Menyediakan berbagai varian ikan laut berkualitas tinggi serta komoditas agribisnis peternakan.
+                </p>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Tuna -->
+                <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col">
+                    <div class="h-48 bg-gradient-to-br from-ocean-700 to-ocean-900 flex items-center justify-center text-white relative">
+                        <i class="fa-solid fa-fish text-6xl opacity-80"></i>
+                        <span class="absolute top-4 right-4 bg-white/20 backdrop-blur-md px-3 py-1 rounded-full text-xs font-medium uppercase tracking-wider" data-i18n="prod_badge_sea">Ikan Laut</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-2">Ikan Tuna (Tuna Fish)</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed" data-i18n="prod_tuna_desc">
+                                Komoditas primadona hasil tangkapan laut dengan kualitas daging segar dan bernutrisi tinggi untuk kebutuhan ekspor & domestik.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-ocean-600">
+                            <span data-i18n="prod_avail">Tersedia (Segar / Beku)</span>
+                            <i class="fa-solid fa-circle-check text-teal-500"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cakalang -->
+                <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col">
+                    <div class="h-48 bg-gradient-to-br from-teal-600 to-ocean-700 flex items-center justify-center text-white relative">
+                        <i class="fa-solid fa-fish text-6xl opacity-80"></i>
+                        <span class="absolute top-4 right-4 bg-white/20 backdrop-blur-md px-3 py-1 rounded-full text-xs font-medium uppercase tracking-wider" data-i18n="prod_badge_sea">Ikan Laut</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-2">Ikan Cakalang (Skipjack Tuna)</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed" data-i18n="prod_cakalang_desc">
+                                Ikan cakalang segar pilihan hasil tangkapan perairan pesisir selatan yang banyak dicari oleh industri pengolahan makanan.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-ocean-600">
+                            <span data-i18n="prod_avail">Tersedia (Segar / Beku)</span>
+                            <i class="fa-solid fa-circle-check text-teal-500"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tongkol -->
+                <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col">
+                    <div class="h-48 bg-gradient-to-br from-slate-800 to-ocean-800 flex items-center justify-center text-white relative">
+                        <i class="fa-solid fa-fish text-6xl opacity-80"></i>
+                        <span class="absolute top-4 right-4 bg-white/20 backdrop-blur-md px-3 py-1 rounded-full text-xs font-medium uppercase tracking-wider" data-i18n="prod_badge_sea">Ikan Laut</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-2">Ikan Tongkol (Mackerel Tuna)</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed" data-i18n="prod_tongkol_desc">
+                                Komoditas ikan konsumsi harian berprotein tinggi dengan pasokan stabil dari nelayan lokal Watulimo dan Prigi.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-ocean-600">
+                            <span data-i18n="prod_avail">Tersedia (Segar / Beku)</span>
+                            <i class="fa-solid fa-circle-check text-teal-500"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Layang -->
+                <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col">
+                    <div class="h-48 bg-gradient-to-br from-teal-700 to-slate-900 flex items-center justify-center text-white relative">
+                        <i class="fa-solid fa-fish text-6xl opacity-80"></i>
+                        <span class="absolute top-4 right-4 bg-white/20 backdrop-blur-md px-3 py-1 rounded-full text-xs font-medium uppercase tracking-wider" data-i18n="prod_badge_sea">Ikan Laut</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-2">Ikan Layang (Scad Fish)</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed" data-i18n="prod_layang_desc">
+                                Ikan pelagis kecil unggulan yang sangat diminati oleh pasar grosir tradisional dan pabrik pengolahan ikan.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-ocean-600">
+                            <span data-i18n="prod_avail">Tersedia (Segar / Beku)</span>
+                            <i class="fa-solid fa-circle-check text-teal-500"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lemuru -->
+                <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col">
+                    <div class="h-48 bg-gradient-to-br from-ocean-600 to-teal-600 flex items-center justify-center text-white relative">
+                        <i class="fa-solid fa-fish text-6xl opacity-80"></i>
+                        <span class="absolute top-4 right-4 bg-white/20 backdrop-blur-md px-3 py-1 rounded-full text-xs font-medium uppercase tracking-wider" data-i18n="prod_badge_sea">Ikan Laut</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-2">Ikan Lemuru (Oil Sardine)</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed" data-i18n="prod_lemuru_desc">
+                                Komoditas ikan laut kaya nutrisi dengan pengadaan rutin untuk memenuhi kebutuhan industri pengalengan dan pasar luas.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-ocean-600">
+                            <span data-i18n="prod_avail">Tersedia (Segar / Beku)</span>
+                            <i class="fa-solid fa-circle-check text-teal-500"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Livestock & Other Marine -->
+                <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col">
+                    <div class="h-48 bg-gradient-to-br from-slate-900 to-slate-700 flex items-center justify-center text-white relative">
+                        <i class="fa-solid fa-otter text-6xl opacity-80"></i>
+                        <span class="absolute top-4 right-4 bg-teal-500 text-slate-900 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider" data-i18n="prod_badge_multi">Agribisnis</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-2" data-i18n="prod_other_title">Ikan Laut Lainnya & Peternakan</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed" data-i18n="prod_other_desc">
+                                Berbagai variasi ikan laut komersial tambahan serta komoditas hasil peternakan dalam kerangka pengembangan agribisnis terpadu.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-ocean-600">
+                            <span data-i18n="prod_custom">Permintaan Khusus Mitra</span>
+                            <i class="fa-solid fa-circle-check text-teal-500"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Operational Areas & Partnership Section -->
+    <section id="partnership" class="py-20 lg:py-28 bg-white border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-6 space-y-6">
+                    <div class="inline-flex items-center space-x-2 text-ocean-600 font-semibold text-sm uppercase tracking-wider">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                        <span data-i18n="area_tag">Wilayah Operasional & Kemitraan</span>
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight" data-i18n="area_heading">
+                        Berakar di Watulimo & Pesisir Prigi, Menjangkau Mitra Nasional
+                    </h2>
+                    <p class="text-slate-600 leading-relaxed text-base" data-i18n="area_desc">
+                        Berbasis di Kabupaten Trenggalek, Jawa Timur, kegiatan operasional utama perusahaan berpusat di kawasan strategis perikanan Watulimo dan kawasan pesisir Prigi yang dikenal sebagai sentra pendaratan ikan tangkap berkualitas tinggi.
+                    </p>
+
+                    <div class="bg-slate-50 border border-slate-200 p-6 rounded-2xl space-y-4">
+                        <h4 class="font-bold text-slate-900 flex items-center space-x-2">
+                            <i class="fa-solid fa-handshake text-ocean-600"></i>
+                            <span data-i18n="partner_title">Jaringan Kemitraan Luas & Berkelanjutan</span>
+                        </h4>
+                        <p class="text-sm text-slate-600 leading-relaxed" data-i18n="partner_desc">
+                            PT GF Agromina Persada secara aktif membangun dan memperkuat jaringan kerja sama kolaboratif dengan berbagai elemen rantai pasok perikanan:
+                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                            <div class="flex items-center space-x-2 text-sm text-slate-700 bg-white p-3 rounded-xl border border-slate-200">
+                                <i class="fa-solid fa-user-check text-teal-500"></i>
+                                <span data-i18n="p_1">Nelayan & Pemilik Kapal</span>
+                            </div>
+                            <div class="flex items-center space-x-2 text-sm text-slate-700 bg-white p-3 rounded-xl border border-slate-200">
+                                <i class="fa-solid fa-user-check text-teal-500"></i>
+                                <span data-i18n="p_2">Pengepul & Pemasok</span>
+                            </div>
+                            <div class="flex items-center space-x-2 text-sm text-slate-700 bg-white p-3 rounded-xl border border-slate-200">
+                                <i class="fa-solid fa-user-check text-teal-500"></i>
+                                <span data-i18n="p_3">Pedagang Besar & Distributor</span>
+                            </div>
+                            <div class="flex items-center space-x-2 text-sm text-slate-700 bg-white p-3 rounded-xl border border-slate-200">
+                                <i class="fa-solid fa-user-check text-teal-500"></i>
+                                <span data-i18n="p_4">Industri Pengolahan Hasil Laut</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Concept of Service Card -->
+                <div class="lg:col-span-6 bg-gradient-to-br from-ocean-900 to-slate-900 text-white p-8 sm:p-10 rounded-3xl shadow-xl border border-slate-800">
+                    <div class="w-12 h-12 rounded-2xl bg-ocean-600 flex items-center justify-center text-xl text-white mb-6">
+                        <i class="fa-solid fa-bullhorn"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4" data-i18n="service_concept_title">Konsep Pelayanan Komersial</h3>
+                    <p class="text-slate-300 leading-relaxed text-base mb-6" data-i18n="service_concept_desc">
+                        GF Agromina Persada melayani kebutuhan pengadaan dan perdagangan hasil perikanan secara profesional untuk berbagai segmen pelanggan komersial:
+                    </p>
+                    <ul class="space-y-3 text-slate-300 text-sm">
+                        <li class="flex items-center space-x-3">
+                            <i class="fa-solid fa-check text-ocean-400"></i>
+                            <span data-i18n="s_1">Pedagang Grosir & Distributor Utama</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fa-solid fa-check text-ocean-400"></i>
+                            <span data-i18n="s_2">Perusahaan Pengolahan Ikan & Pabrik</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fa-solid fa-check text-ocean-400"></i>
+                            <span data-i18n="s_3">Restoran, Hotel, & Mitra Kuliner</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fa-solid fa-check text-ocean-400"></i>
+                            <span data-i18n="s_4">Mitra Bisnis & Agribisnis Terpadu</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Google Maps Style Business Info Section -->
+    <section id="contact" class="py-20 lg:py-28 bg-slate-900 text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#0ea5e9_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <div class="inline-flex items-center space-x-2 text-ocean-400 font-semibold text-sm uppercase tracking-wider mb-3">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span data-i18n="contact_tag">Hubungi Kami</span>
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight" data-i18n="contact_heading">
+                    Pusat Informasi & Kerja Sama Bisnis
+                </h2>
+                <p class="mt-4 text-slate-400 text-lg" data-i18n="contact_sub">
+                    Hubungi tim PT GF Agromina Persada untuk kebutuhan pasokan ikan segar, ikan beku, dan kemitraan agribisnis.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+                <!-- Google Maps Style Business Card -->
+                <div class="lg:col-span-5 bg-slate-800 border border-slate-700 p-8 rounded-3xl shadow-xl space-y-6">
+                    <div class="flex items-center space-x-4 border-b border-slate-700 pb-6">
+                        <div class="w-14 h-14 bg-gradient-to-tr from-ocean-600 to-teal-500 rounded-2xl flex items-center justify-center text-white text-2xl shadow-lg flex-shrink-0">
+                            <i class="fa-solid fa-store"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-white">PT GF AGROMINA PERSADA</h3>
+                            <p class="text-xs text-ocean-400 font-semibold uppercase tracking-wider mt-1" data-i18n="map_card_sub">Google Maps Business Profile View</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4 text-sm text-slate-300">
+                        <div class="flex items-start space-x-3">
+                            <i class="fa-solid fa-user-tie text-ocean-400 mt-1"></i>
+                            <div>
+                                <span class="font-semibold text-white block" data-i18n="lbl_leader">Pimpinan / Founder:</span>
+                                <span>Gayuh M Fajar (Pengusaha Pemasok Ikan Segar)</span>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-3">
+                            <i class="fa-solid fa-location-dot text-ocean-400 mt-1"></i>
+                            <div>
+                                <span class="font-semibold text-white block" data-i18n="lbl_location">Alamat Operasional Lengkap:</span>
+                                <span class="text-xs sm:text-sm">Jl. Raya Pasir Putih, RT.17/RW.03, Gares Kidul, Tasikmadu, Kec. Watulimo, Kabupaten Trenggalek, Jawa Timur 66382</span>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-3">
+                            <i class="fa-brands fa-whatsapp text-emerald-400 mt-1"></i>
+                            <div>
+                                <span class="font-semibold text-white block" data-i18n="lbl_wa">Nomor WhatsApp:</span>
+                                <a href="https://wa.me/6282336507282" target="_blank" class="text-emerald-400 hover:underline font-bold text-base">+6282336507282</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-3">
+                            <i class="fa-solid fa-envelope text-ocean-400 mt-1"></i>
+                            <div>
+                                <span class="font-semibold text-white block" data-i18n="lbl_email">Email Resmi:</span>
+                                <a href="mailto:gayuhfajar3112@gmail.com" class="text-ocean-300 hover:underline font-medium">gayuhfajar3112@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-3">
+                            <i class="fa-solid fa-briefcase text-ocean-400 mt-1"></i>
+                            <div>
+                                <span class="font-semibold text-white block" data-i18n="lbl_sector">Bidang Usaha:</span>
+                                <span data-i18n="lbl_sector_desc">Agribisnis, Peternakan, dan Perikanan (Perdagangan & Supplier Ikan Segar/Beku)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-700 flex flex-col sm:flex-row items-center justify-between gap-3">
+                        <span class="flex items-center space-x-1.5 text-emerald-400 font-medium text-xs">
+                            <i class="fa-solid fa-circle text-[8px]"></i>
+                            <span data-i18n="map_open_status">Siap Melayani Mitra Usaha</span>
+                        </span>
+                        <a href="https://wa.me/6282336507282" target="_blank" class="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center justify-center space-x-2">
+                            <i class="fa-brands fa-whatsapp text-sm"></i>
+                            <span>Chat WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Inquiry Form -->
+                <div class="lg:col-span-7 bg-slate-800 border border-slate-700 p-8 sm:p-10 rounded-3xl shadow-xl">
+                    <h3 class="text-2xl font-bold mb-6 text-white" data-i18n="form_title">Kirimkan Pertanyaan / Pesan Kemitraan</h3>
+                    
+                    <form id="inquiry-form" onsubmit="handleFormSubmit(event)" class="space-y-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-slate-300 mb-2" data-i18n="form_name">Nama Lengkap / Instansi</label>
+                                <input type="text" id="name" required class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-ocean-500 text-sm" placeholder="Contoh: Budi Santoso / CV Berkah">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-slate-300 mb-2" data-i18n="form_email">Email / Nomor WhatsApp</label>
+                                <input type="text" id="contact_info" required class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-ocean-500 text-sm" placeholder="Contoh: 081234567890">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-slate-300 mb-2" data-i18n="form_subject">Jenis Kebutuhan / Topik Kerja Sama</label>
+                            <select id="subject" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-ocean-500 text-sm">
+                                <option value="Supplier Ikan Segar / Beku" data-i18n="opt_1">Pengadaan Supplier Ikan Segar / Beku</option>
+                                <option value="Perdagangan Besar Hasil Laut" data-i18n="opt_2">Perdagangan Besar Hasil Perikanan</option>
+                                <option value="Kemitraan Jaringan Usaha" data-i18n="opt_3">Kemitraan Jaringan Nelayan & Distributor</option>
+                                <option value="Lainnya" data-i18n="opt_4">Lainnya / Pertanyaan Umum</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-slate-300 mb-2" data-i18n="form_msg">Pesan / Detail Kebutuhan</label>
+                            <textarea id="message" rows="4" required class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-ocean-500 text-sm resize-none" placeholder="Tuliskan spesifikasi produk, volume, atau pertanyaan Anda di sini..."></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-semibold py-4 rounded-xl shadow-lg shadow-emerald-600/30 transition-all flex items-center justify-center space-x-2 cursor-pointer">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                            <span data-i18n="form_btn">Kirim Pesan via WhatsApp</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-slate-400 border-t border-slate-800 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+            <div class="flex items-center space-x-3">
+                <div class="w-9 h-9 rounded-lg bg-ocean-600 flex items-center justify-center text-white font-bold">
+                    <i class="fa-solid fa-water"></i>
+                </div>
+                <div>
+                    <span class="text-sm font-bold text-white block">PT GF AGROMINA PERSADA</span>
+                    <span class="text-xs text-slate-500" data-i18n="footer_sub">Trenggalek, Jawa Timur, Indonesia</span>
+                </div>
+            </div>
+            
+            <div class="text-xs text-slate-500">
+                &copy; <span id="current-year">2026</span> PT GF AGROMINA PERSADA. <span data-i18n="footer_rights">Seluruh hak cipta dilindungi undang-undang.</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Bilingual Toggle and Interactivity -->
+    <script>
+        // Set copyright year dynamically
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Toggle Mobile Menu
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('mobile-menu-icon');
+            menu.classList.toggle('hidden');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-xmark');
+        }
+
+        // Toast Notification Function
+        function showToast(message, isSuccess = true) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toast-msg');
+            const toastIcon = document.getElementById('toast-icon');
+            
+            toastMsg.textContent = message;
+            if(isSuccess) {
+                toastIcon.className = "fa-solid fa-circle-check text-teal-400 text-xl";
+            } else {
+                toastIcon.className = "fa-solid fa-triangle-exclamation text-amber-400 text-xl";
+            }
+
+            toast.classList.remove('translate-y-24', 'opacity-0');
+            setTimeout(() => {
+                toast.classList.add('translate-y-24', 'opacity-0');
+            }, 4000);
+        }
+
+        // Handle Form Submission -> Direct to WhatsApp
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const contact = document.getElementById('contact_info').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+
+            const waText = `Halo PT GF Agromina Persada,%0A%0ANama: ${name}%0AKontak: ${contact}%0ATopik: ${subject}%0APesan: ${message}`;
+            
+            showToast(currentLang === 'id' ? "Mengarahkan ke WhatsApp PT GF Agromina Persada..." : "Redirecting to PT GF Agromina Persada WhatsApp...", true);
+            
+            setTimeout(() => {
+                window.open(`https://wa.me/6282336507282?text=${waText}`, '_blank');
+            }, 1000);
+        }
+
+        // Bilingual Dictionary
+        let currentLang = 'id';
+
+        const translations = {
+            id: {
+                nav_sub: "Agribusiness & Fisheries",
+                nav_about: "Tentang Kami",
+                nav_founder: "Pimpinan",
+                nav_business: "Kegiatan Usaha",
+                nav_workflow: "Proses & Mutu",
+                nav_products: "Produk",
+                nav_partnership: "Kemitraan",
+                nav_contact: "Kontak",
+                hero_badge: "Trenggalek, Jawa Timur, Indonesia",
+                hero_title: "PT GF AGROMINA PERSADA",
+                hero_subtitle: "Mitra Terpercaya Perdagangan Hasil Perikanan, Supplier Ikan Segar & Beku Profesional",
+                hero_desc: "Berpusat di Jl. Raya Pasir Putih, Tasikmadu, Watulimo, Trenggalek, menghubungkan hasil tangkapan laut berkualitas tinggi dengan jaringan mitra nasional.",
+                hero_btn_wa: "WhatsApp (+6282336507282)",
+                hero_btn_products: "Lihat Produk & Komoditas",
+                map_status: "Aktif • Supplier Perikanan & Agribisnis",
+                map_dir_btn: "Kirim Pesan",
+                about_tag: "Tentang Perusahaan",
+                about_title: "Membangun Keunggulan dalam Agribisnis & Perikanan Nasional",
+                about_desc1: "GF AGROMINA PERSADA yang dipimpin oleh Gayuh M Fajar sebagai Pengusaha Pemasok Ikan Segar merupakan pusat penyedia hasil tangkapan laut berkualitas tinggi di Watulimo, Trenggalek. Kami melayani pasokan ikan segar untuk restoran, hotel, pasar grosir, serta pabrik pengolahan makanan dengan komitmen standar mutu dan rantai dingin (cold chain) terbaik.",
+                about_desc2: "Perusahaan mengembangkan jaringan kerja sama yang luas dan berkelanjutan dengan nelayan, pemilik kapal, pengepul, pemasok, pedagang besar, distributor, serta pelaku industri pengolahan hasil laut.",
+                vision_title: "Visi Perusahaan",
+                vision_desc: "Menjadi perusahaan agribisnis dan perikanan yang terpercaya, profesional, serta memiliki jaringan perdagangan dan distribusi hasil perikanan yang luas di Indonesia.",
+                mission_title: "Misi Utama",
+                mission_1: "Menyediakan komoditas perikanan berkualitas.",
+                mission_2: "Membangun hubungan bisnis jangka panjang.",
+                mission_3: "Mengutamakan kualitas produk & pelayanan.",
+                status_box_title: "Status Operasional & Pengembangan",
+                current_ops_title: "Kegiatan Usaha Berjalan",
+                current_ops_desc: "Perdagangan besar hasil perikanan, pengadaan ikan segar & beku, pengadaan hasil tangkapan laut dari kawasan pesisir Prigi & Watulimo, serta distribusi langsung kepada mitra dan pelanggan komersial.",
+                future_ops_title: "Rencana Pengembangan Perusahaan",
+                future_ops_desc: "Perluasan kapasitas cold storage modern, pengembangan lini pengolahan & pengemasan hasil laut berstandar tinggi, serta ekspansi jaringan distribusi hasil perikanan dan peternakan ke tingkat nasional.",
+                founder_tag: "Kepemimpinan Perusahaan",
+                founder_heading: "Founder & Pimpinan",
+                founder_sub: "Pengalaman mendalam dan dedikasi tinggi di sektor agribisnis dan perdagangan perikanan.",
+                founder_role: "Founder & Pimpinan Perusahaan",
+                founder_title_desc: "Pengusaha Pemasok Ikan Segar & Praktisi Perikanan Andal",
+                founder_bio: "Berbekal pengalaman langsung di sentra perikanan pesisir selatan Jawa Timur, Gayuh M Fajar memimpin PT GF Agromina Persada dengan komitmen tinggi terhadap kualitas kesegaran ikan, transparansi kemitraan, serta keandalan rantai pasok dari nelayan hingga ke tangan pelanggan institusional dan grosir.",
+                founder_badge_net: "Jaringan Nelayan & Supplier Luas",
+                biz_tag: "Ruang Lingkup Usaha",
+                biz_heading: "9 Kategori Kegiatan Usaha Utama",
+                biz_sub: "Menyelenggarakan operasional komprehensif dari hulu hingga hilir perikanan dan agribisnis.",
+                cat_1_title: "1. Perdagangan Besar Hasil Perikanan",
+                cat_1_desc: "Aktivitas perdagangan skala besar komoditas hasil laut untuk memenuhi kebutuhan pasar grosir dan industri.",
+                cat_2_title: "2. Supplier Ikan Segar",
+                cat_2_desc: "Penyediaan dan pasokan harian ikan segar langsung dari tangkapan nelayan pesisir dengan standar mutu tinggi.",
+                cat_3_title: "3. Supplier Ikan Beku",
+                cat_3_desc: "Penyediaan ikan beku berkualitas terjaga untuk pasokan berkelanjutan lintas wilayah dan industri.",
+                cat_4_title: "4. Pengadaan Hasil Tangkapan Laut",
+                cat_4_desc: "Sistem pengadaan terpadu langsung dari kapal nelayan dan Tempat Pelelangan Ikan (TPI) Prigi.",
+                cat_5_title: "5. Penyortiran & Penanganan Ikan",
+                cat_5_desc: "Proses seleksi ketat berdasarkan ukuran, jenis, dan tingkat kesegaran sesuai spesifikasi pembeli.",
+                cat_6_title: "6. Penyimpanan Cold Storage",
+                cat_6_desc: "Fasilitas penyimpanan suhu rendah guna menjaga kualitas dan kesegaran produk dalam jangka panjang.",
+                cat_7_title: "7. Pengolahan & Pengemasan Hasil Laut",
+                cat_7_desc: "Pengemasan higienis dan penyiapan produk olahan hasil laut yang siap didistribusikan secara aman.",
+                cat_8_title: "8. Distribusi Antardaerah",
+                cat_8_desc: "Pengiriman logistik hasil perikanan secara tepat waktu ke berbagai wilayah dan mitra distribusi.",
+                cat_9_title: "9. Perdagangan & Peternakan",
+                cat_9_desc: "Pengembangan lini agribisnis dan perdagangan komoditas peternakan untuk memperkuat portofolio perusahaan.",
+                wf_tag: "Standar Operasional Profesional",
+                wf_heading: "Alur Kerja & Rantai Dingin (Cold Chain) Mutu Ikan",
+                wf_sub: "Proses sistematis yang menjamin kesegaran dan kualitas terbaik dari nelayan hingga mitra bisnis.",
+                wf_1_title: "Pengadaan (Procurement)",
+                wf_1_desc: "Kerja sama langsung dengan nelayan lokal di Watulimo dan Prigi untuk mendapatkan hasil tangkapan laut segar harian yang memenuhi standar seleksi mutu perusahaan.",
+                wf_2_title: "Penanganan & Cold Chain",
+                wf_2_desc: "Pemberlakuan standar penanganan higienis cepat guna menjaga suhu dingin konstan dan mengeliminasi risiko penurunan kualitas ikan sejak pendaratan.",
+                wf_3_title: "Penyortiran (Sorting)",
+                wf_3_desc: "Pemeriksaan teliti berdasarkan kategori spesies, ukuran berat, dan tingkat kesegaran untuk memastikan kesesuaian pesanan pelanggan grosir.",
+                wf_4_title: "Penyimpanan (Storage)",
+                wf_4_desc: "Penggunaan fasilitas cold storage dan ruang pendingin terkontrol untuk mempertahankan kesegaran produk dalam jangka panjang.",
+                wf_5_title: "Pengemasan (Packaging)",
+                wf_5_desc: "Pengemasan yang higienis, aman, dan dirancang khusus untuk mempertahankan temperatur optimal selama perjalanan distribusi.",
+                wf_6_title: "Distribusi (Distribution)",
+                wf_6_desc: "Sistem pengiriman terjadwal dan efisien untuk menyuplai pedagang besar, distributor, restoran, hotel, dan industri pengolahan.",
+                prod_tag: "Katalog Komoditas",
+                prod_heading: "Produk & Komoditas Unggulan",
+                prod_sub: "Menyediakan berbagai varian ikan laut berkualitas tinggi serta komoditas agribisnis peternakan.",
+                prod_badge_sea: "Ikan Laut",
+                prod_badge_multi: "Agribisnis",
+                prod_tuna_desc: "Komoditas primadona hasil tangkapan laut dengan kualitas daging segar dan bernutrisi tinggi untuk kebutuhan ekspor & domestik.",
+                prod_cakalang_desc: "Ikan cakalang segar pilihan hasil tangkapan perairan pesisir selatan yang banyak dicari oleh industri pengolahan makanan.",
+                prod_tongkol_desc: "Komoditas ikan konsumsi harian berprotein tinggi dengan pasokan stabil dari nelayan lokal Watulimo dan Prigi.",
+                prod_layang_desc: "Ikan pelagis kecil unggulan yang sangat diminati oleh pasar grosir tradisional dan pabrik pengolahan ikan.",
+                prod_lemuru_desc: "Komoditas ikan laut kaya nutrisi dengan pengadaan rutin untuk memenuhi kebutuhan industri pengalengan dan pasar luas.",
+                prod_other_title: "Ikan Laut Lainnya & Peternakan",
+                prod_other_desc: "Berbagai variasi ikan laut komersial tambahan serta komoditas hasil peternakan dalam kerangka pengembangan agribisnis terpadu.",
+                prod_avail: "Tersedia (Segar / Beku)",
+                prod_custom: "Permintaan Khusus Mitra",
+                area_tag: "Wilayah Operasional & Kemitraan",
+                area_heading: "Berakar di Watulimo & Pesisir Prigi, Menjangkau Mitra Nasional",
+                area_desc: "Berbasis di Kabupaten Trenggalek, Jawa Timur, kegiatan operasional utama perusahaan berpusat di kawasan strategis perikanan Watulimo dan kawasan pesisir Prigi yang dikenal sebagai sentra pendaratan ikan tangkap berkualitas tinggi.",
+                partner_title: "Jaringan Kemitraan Luas & Berkelanjutan",
+                partner_desc: "PT GF Agromina Persada secara aktif membangun dan memperkuat jaringan kerja sama kolaboratif dengan berbagai elemen rantai pasok perikanan:",
+                p_1: "Nelayan & Pemilik Kapal",
+                p_2: "Pengepul & Pemasok",
+                p_3: "Pedagang Besar & Distributor",
+                p_4: "Industri Pengolahan Hasil Laut",
+                service_concept_title: "Konsep Pelayanan Komersial",
+                service_concept_desc: "GF Agromina Persada melayani kebutuhan pengadaan dan perdagangan hasil perikanan secara profesional untuk berbagai segmen pelanggan komersial:",
+                s_1: "Pedagang Grosir & Distributor Utama",
+                s_2: "Perusahaan Pengolahan Ikan & Pabrik",
+                s_3: "Restoran, Hotel, & Mitra Kuliner",
+                s_4: "Mitra Bisnis & Agribisnis Terpadu",
+                contact_tag: "Hubungi Kami",
+                contact_heading: "Pusat Informasi & Kerja Sama Bisnis",
+                contact_sub: "Hubungi tim PT GF Agromina Persada untuk kebutuhan pasokan ikan segar, ikan beku, dan kemitraan agribisnis.",
+                map_card_sub: "Google Maps Business Profile View",
+                lbl_leader: "Pimpinan / Founder:",
+                lbl_location: "Alamat Operasional Lengkap:",
+                lbl_wa: "Nomor WhatsApp:",
+                lbl_email: "Email Resmi:",
+                lbl_sector: "Bidang Usaha:",
+                lbl_sector_desc: "Agribisnis, Peternakan, dan Perikanan (Perdagangan & Supplier Ikan Segar/Beku)",
+                map_open_status: "Siap Melayani Mitra Usaha",
+                form_title: "Kirimkan Pertanyaan / Pesan Kemitraan",
+                form_name: "Nama Lengkap / Instansi",
+                form_email: "Email / Nomor WhatsApp",
+                form_subject: "Jenis Kebutuhan / Topik Kerja Sama",
+                opt_1: "Pengadaan Supplier Ikan Segar / Beku",
+                opt_2: "Perdagangan Besar Hasil Perikanan",
+                opt_3: "Kemitraan Jaringan Nelayan & Distributor",
+                opt_4: "Lainnya / Pertanyaan Umum",
+                form_msg: "Pesan / Detail Kebutuhan",
+                form_btn: "Kirim Pesan via WhatsApp",
+                footer_sub: "Trenggalek, Jawa Timur, Indonesia",
+                footer_rights: "Seluruh hak cipta dilindungi undang-undang."
+            },
+            en: {
+                nav_sub: "Agribusiness & Fisheries",
+                nav_about: "About Us",
+                nav_founder: "Leadership",
+                nav_business: "Business",
+                nav_workflow: "Workflow",
+                nav_products: "Products",
+                nav_partnership: "Partnership",
+                nav_contact: "Contact",
+                hero_badge: "Trenggalek, East Java, Indonesia",
+                hero_title: "PT GF AGROMINA PERSADA",
+                hero_subtitle: "Trusted Fisheries Trading Partner & Professional Fresh/Frozen Fish Supplier",
+                hero_desc: "Headquartered at Jl. Raya Pasir Putih, Tasikmadu, Watulimo, Trenggalek, connecting high-quality marine catches to national partner networks.",
+                hero_btn_wa: "WhatsApp (+6282336507282)",
+                hero_btn_products: "View Products & Commodities",
+                map_status: "Active • Fisheries & Agribusiness Supplier",
+                map_dir_btn: "Send Inquiry",
+                about_tag: "Company Overview",
+                about_title: "Building Excellence in National Agribusiness & Fisheries",
+                about_desc1: "GF AGROMINA PERSADA, led by Gayuh M Fajar as a Fresh Fish Supply Entrepreneur, is a premier provider of high-quality marine catches in Watulimo, Trenggalek. We supply fresh fish to restaurants, hotels, wholesale markets, and food processing plants with a strong commitment to quality standards and cold chain excellence.",
+                about_desc2: "The company develops extensive and sustainable cooperative networks with fishermen, boat owners, collectors, suppliers, wholesalers, distributors, and marine processing industries.",
+                vision_title: "Company Vision",
+                vision_desc: "To become a trusted, professional agribusiness and fisheries company with a wide-ranging trading and distribution network across Indonesia.",
+                mission_title: "Core Missions",
+                mission_1: "Providing high-quality fishery commodities.",
+                mission_2: "Building long-term business relationships.",
+                mission_3: "Prioritizing product quality & customer service.",
+                status_box_title: "Operational Status & Development",
+                current_ops_title: "Current Operations",
+                current_ops_desc: "Wholesale fisheries trading, fresh & frozen fish procurement, marine catch sourcing from Prigi & Watulimo coastal regions, and direct distribution to commercial partners.",
+                future_ops_title: "Future Development Plan",
+                future_ops_desc: "Expansion of modern cold storage capacity, high-standard marine processing & packaging lines, and nationwide distribution network scaling for fisheries and livestock.",
+                founder_tag: "Company Leadership",
+                founder_heading: "Founder & Leader",
+                founder_sub: "Deep experience and unwavering dedication in the agribusiness and fisheries trading sector.",
+                founder_role: "Founder & Company Leader",
+                founder_title_desc: "Fresh Fish Supply Entrepreneur & Accomplished Fisheries Practitioner",
+                founder_bio: "Drawing on direct experience in the southern coastal fisheries hub of East Java, Gayuh M Fajar leads PT GF Agromina Persada with a strong commitment to fish freshness, partnership transparency, and supply chain reliability from fishermen to institutional and wholesale clients.",
+                founder_badge_net: "Extensive Fishermen & Supplier Network",
+                biz_tag: "Business Scope",
+                biz_heading: "9 Core Business Categories",
+                biz_sub: "Executing comprehensive operations from upstream to downstream fisheries and agribusiness.",
+                cat_1_title: "1. Wholesale Fisheries Trading",
+                cat_1_desc: "Large-scale trading activities of marine commodities to meet wholesale and industrial market demands.",
+                cat_2_title: "2. Fresh Fish Supplier",
+                cat_2_desc: "Daily provision and supply of fresh fish directly from coastal fishermen catches meeting high quality standards.",
+                cat_3_title: "3. Frozen Fish Supplier",
+                cat_3_desc: "Provision of temperature-controlled frozen fish for continuous cross-regional and industrial supply.",
+                cat_4_title: "4. Marine Catch Procurement",
+                cat_4_desc: "Integrated procurement system directly from fishing vessels and Prigi Fish Auction Place (TPI).",
+                cat_5_title: "5. Sorting & Fish Handling",
+                cat_5_desc: "Rigorous selection process based on size, species, and freshness levels according to buyer specifications.",
+                cat_6_title: "6. Cold Storage Facility",
+                cat_6_desc: "Low-temperature storage facilities to maintain long-term product quality and freshness.",
+                cat_7_title: "7. Marine Product Processing & Packaging",
+                cat_7_desc: "Hygienic packaging and preparation of marine processed products ready for safe distribution.",
+                cat_8_title: "8. Inter-regional Distribution",
+                cat_8_desc: "Timely logistics delivery of fishery products to various regions and distribution partners.",
+                cat_9_title: "9. Trading & Livestock Business",
+                cat_9_desc: "Development of agribusiness lines and livestock commodity trading to strengthen company portfolio.",
+                wf_tag: "Professional Operational Standards",
+                wf_heading: "Workflow & Cold Chain Quality Handling",
+                wf_sub: "Systematic processes ensuring top freshness and quality from fishermen to business partners.",
+                wf_1_title: "Procurement",
+                wf_1_desc: "Direct collaboration with local fishermen in Watulimo and Prigi to acquire daily fresh marine catches meeting company quality standards.",
+                wf_2_title: "Handling & Cold Chain",
+                wf_2_desc: "Implementation of rapid hygienic handling standards to maintain constant cold temperatures and eliminate quality degradation risks upon landing.",
+                wf_3_title: "Sorting",
+                wf_3_desc: "Careful inspection by species category, weight size, and freshness grade to ensure wholesale buyer specification compliance.",
+                wf_4_title: "Storage",
+                wf_4_desc: "Utilization of cold storage facilities and controlled refrigerated rooms to sustain product freshness prior to subsequent processing.",
+                wf_5_title: "Packaging",
+                wf_5_desc: "Hygienic, secure packaging specifically designed to maintain optimal temperature throughout distribution transit.",
+                wf_6_title: "Distribution",
+                wf_6_desc: "Scheduled and efficient delivery system to supply wholesalers, distributors, restaurants, hotels, and processing industries.",
+                prod_tag: "Commodity Catalog",
+                prod_heading: "Featured Products & Commodities",
+                prod_sub: "Providing high-grade marine fish variants and livestock agribusiness commodities.",
+                prod_badge_sea: "Marine Fish",
+                prod_badge_multi: "Agribusiness",
+                prod_tuna_desc: "Flagship marine catch commodity featuring fresh, high-nutrition meat for domestic and export markets.",
+                prod_cakalang_desc: "Selected fresh skipjack tuna from southern coastal waters sought after by food processing industries.",
+                prod_tongkol_desc: "High-protein daily consumption fish commodity with stable supply from Watulimo and Prigi local fishermen.",
+                prod_layang_desc: "Leading small pelagic fish highly demanded by traditional wholesale markets and processing plants.",
+                prod_lemuru_desc: "Nutrient-rich marine fish commodity with routine procurement to fulfill canning and broad market demands.",
+                prod_other_title: "Other Marine Fish & Livestock",
+                prod_other_desc: "Various additional commercial marine fish variants and livestock commodities within an integrated agribusiness framework.",
+                prod_avail: "Available (Fresh / Frozen)",
+                prod_custom: "Partner Custom Requests",
+                area_tag: "Operational Areas & Partnership",
+                area_heading: "Rooted in Watulimo & Prigi Coast, Reaching National Partners",
+                area_desc: "Based in Trenggalek Regency, East Java, the company's primary operations center in the strategic Watulimo fisheries zone and Prigi coastal area renowned as high-quality catch landing hubs.",
+                partner_title: "Wide & Sustainable Partnership Network",
+                partner_desc: "PT GF Agromina Persada actively builds and strengthens collaborative cooperation networks across fisheries supply chain elements:",
+                p_1: "Fishermen & Boat Owners",
+                p_2: "Collectors & Suppliers",
+                p_3: "Wholesalers & Distributors",
+                p_4: "Marine Processing Industries",
+                service_concept_title: "Commercial Service Concept",
+                service_concept_desc: "GF Agromina Persada professionally serves fisheries procurement and trading needs for various commercial customer segments:",
+                s_1: "Major Wholesalers & Distributors",
+                s_2: "Fish Processing Companies & Plants",
+                s_3: "Restaurants, Hotels, & Culinary Partners",
+                s_4: "Business Partners & Integrated Agribusiness",
+                contact_tag: "Contact Us",
+                contact_heading: "Information Center & Business Cooperation",
+                contact_sub: "Get in touch with PT GF Agromina Persada team for fresh fish, frozen fish supply, and agribusiness partnerships.",
+                map_card_sub: "Google Maps Business Profile View",
+                lbl_leader: "Leader / Founder:",
+                lbl_location: "Operational Address:",
+                lbl_wa: "WhatsApp Number:",
+                lbl_email: "Official Email:",
+                lbl_sector: "Business Sector:",
+                lbl_sector_desc: "Agribusiness, Livestock, and Fisheries (Trading & Fresh/Frozen Fish Supplier)",
+                map_open_status: "Ready to Serve Business Partners",
+                form_title: "Send Partnership Inquiry / Message",
+                form_name: "Full Name / Institution",
+                form_email: "Email / WhatsApp Number",
+                form_subject: "Inquiry Type / Cooperation Topic",
+                opt_1: "Fresh / Frozen Fish Supply Procurement",
+                opt_2: "Wholesale Fisheries Trading",
+                opt_3: "Fishermen & Distributor Network Partnership",
+                opt_4: "Other / General Inquiry",
+                form_msg: "Message / Requirement Details",
+                form_btn: "Send Message via WhatsApp",
+                footer_sub: "Trenggalek, East Java, Indonesia",
+                footer_rights: "All rights reserved."
+            }
+        };
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'id' ? 'en' : 'id';
+            document.getElementById('lang-label').textContent = currentLang === 'id' ? 'ID / EN' : 'EN / ID';
+            
+            const elements = document.querySelectorAll('[data-i18n]');
+            elements.forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if(translations[currentLang][key]) {
+                    el.textContent = translations[currentLang][key];
+                }
+            });
+
+            // Update placeholders
+            if(currentLang === 'en') {
+                document.getElementById('name').placeholder = "e.g. John Doe / CV Berkah";
+                document.getElementById('contact_info').placeholder = "e.g. +6281234567890";
+                document.getElementById('message').placeholder = "Write product specifications, volume, or your questions here...";
+            } else {
+                document.getElementById('name').placeholder = "Contoh: Budi Santoso / CV Berkah";
+                document.getElementById('contact_info').placeholder = "Contoh: 081234567890";
+                document.getElementById('message').placeholder = "Tuliskan spesifikasi produk, volume, atau pertanyaan Anda di sini...";
+            }
+
+            showToast(currentLang === 'id' ? "Bahasa diubah ke Bahasa Indonesia" : "Language switched to English", true);
+        }
+    </script>
+</body>
+</html>

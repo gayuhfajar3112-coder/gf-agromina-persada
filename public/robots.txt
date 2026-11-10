@@ -1,0 +1,10 @@
+# robots.txt for PT GF Agromina Persada
+# https://gfagromina.co.id / AI Studio hosted
+
+User-agent: *
+Allow: /
+Allow: /assets/
+Allow: /sitemap.xml
+
+# Sitemaps
+Sitemap: https://ais-pre-jcqn5p7vjgfdiixemlcggz-782297752594.asia-northeast1.run.app/sitemap.xml
